@@ -1,43 +1,116 @@
-body {
-  font-family: 'Georgia', serif;
-  background-color: yellow; /* temporal */
-  color: black;
+/* === RESET GENERAL === */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  background-color: #faf6f1;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* === CABECERA === */
 header {
-  background: #e67e22;
+  background: linear-gradient(135deg, #e67e22, #f1c40f);
   color: white;
-  padding: 1em 0;
+  padding: 1.5em 0;
   text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+  font-size: 2em;
+  margin-bottom: 0.3em;
 }
 
 nav a {
   color: white;
-  margin: 0 10px;
+  margin: 0 12px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
+  transition: color 0.3s;
 }
 
+nav a:hover {
+  color: #fdf2c8;
+}
+
+/* === CONTENIDO PRINCIPAL === */
 main {
-  width: 80%;
-  margin: 2em auto;
+  width: 90%;
+  max-width: 900px;
+  margin: 2.5em auto;
   background: white;
-  padding: 1.5em;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding: 2em;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.6s ease-in-out;
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+main h2 {
+  text-align: center;
+  color: #e67e22;
+  margin-bottom: 1.2em;
+  font-size: 1.8em;
+}
+
+/* === LISTA DE RECETAS === */
+ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5em;
+}
+
+ul li {
+  background: #fff8ef;
+  padding: 1.2em;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+ul li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.12);
+  background: #fff3e0;
+}
+
+ul li a {
+  color: #e67e22;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
+ul li a:hover {
+  color: #d35400;
+}
+
+/* === IMÁGENES DE RECETAS === */
 main img {
   max-width: 100%;
-  border-radius: 5px;
+  border-radius: 10px;
   margin-bottom: 1em;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
+/* === PIE DE PÁGINA === */
 footer {
   text-align: center;
   padding: 1em;
-  background: #eee;
+  background: #f1c40f;
+  color: #fff;
   margin-top: 2em;
+  font-weight: bold;
+  border-top: 3px solid #e67e22;
 }
